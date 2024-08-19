@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let number = window.prompt("Entrez un nombre : ");
+
+        while (number < 10 || number > 20){
+            if (number > 20){
+                alert("Votre nombre est trop grand");
+                number = window.prompt("Entrez un nombre : ");
+            } if (number < 10){
+                alert("Votre nombre est trop petit");
+                number = window.prompt("Entrez un nombre : ");
+            }
+        }
+        alert("Votre nombre est dans la bonne tranche");
+
+
+
+
+
+    </script>
+
+</body>
+</html>

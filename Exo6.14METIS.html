@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let nombresEleves = parseInt(prompt("Entrez le nombre d'élèves dans la classe : "));
+        let notesClasse = [];
+
+
+        for (let i = 0; i < nombresEleves; i++) {
+            let note = parseFloat(prompt("Entrez la note de l'élève :" + (i + 1)));
+            if (note < 0 || note > 20) {
+                alert("Entrez une note comprise entre 0 et 20");
+                i--;
+            } else {
+                notesClasse.push(note);
+            }
+        }
+
+        console.log(notesClasse);
+
+
+        let sommeNotesClasse = null;
+
+        for (let i = 0; i < notesClasse.length; i++) {
+            sommeNotesClasse = sommeNotesClasse + notesClasse[i];
+        }
+
+        console.log("somme des Notes de la classe : " + sommeNotesClasse);
+
+        let moyennneClasse = sommeNotesClasse / notesClasse.length;
+
+        console.log(moyennneClasse);
+
+        let noteSupMoy = 0;
+        let noteInfMoy = 0;
+
+        for (let i = 0; i < notesClasse.length; i++) {
+            if (notesClasse[i] < moyennneClasse) {
+                noteInfMoy++;
+            } else {
+                noteSupMoy++;
+            }
+        }
+
+        console.log("nombre de notes supérieur à la moyenne : " + noteSupMoy);
+        console.log("nombre de notes inférieurs à la moyenne : " + noteInfMoy);
+
+
+
+    </script>
+
+</body>
+</html>

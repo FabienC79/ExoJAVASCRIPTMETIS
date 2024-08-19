@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    let nombreDeValeurs = parseInt(prompt("Entrez le nombre de valeurs que vous souhaitez saisir :"));
+
+    let valeurs = [];
+    let nombrePositifs = 0;
+    let nombreNegatifs = 0;
+
+    for (let i = 0; i < nombreDeValeurs; i++) {
+        let valeur = parseFloat(prompt(`Entrez la valeur numéro ${i + 1}:`));
+        valeurs.push(valeur);
+
+        if (valeur > 0) {
+            nombrePositifs++;
+        } else if (valeur < 0) {
+            nombreNegatifs++;
+        }
+    }
+
+    console.log(`Nombre de valeurs positives : ${nombrePositifs}`);
+    console.log(`Nombre de valeurs négatives : ${nombreNegatifs}`);
+
+</script>
+
+</body>
+</html>

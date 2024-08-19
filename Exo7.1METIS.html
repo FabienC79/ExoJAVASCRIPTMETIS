@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let longueurTableau = parseInt(prompt("Entrez la longueur du tableau : "));
+        let tableau = [];
+
+        for (let i = 0; i < longueurTableau; i++) {
+            let nombre = parseFloat(prompt("Entrez le nombre entier n°" + (i + 1)));
+            tableau.push(nombre);
+        }
+
+        console.log(tableau);
+
+        let tabCons = true;
+        let count = 0;
+        // for (let i = 1; i < tableau.length && tabCons === true; i++) {
+        //     if (tableau[i] !== tableau[i - 1] + 1) {
+        //         tabCons = false;
+        //     }
+        //     count++;
+        // }
+
+        count = 0;
+        for (let i = 1; i < tableau.length; i++) {
+            count++;
+            if (tableau[i] !== tableau[i - 1] + 1) {
+                tabCons = false;
+                break;
+            }
+        }
+
+        console.log(tabCons);
+
+        if (tabCons === true) {
+            alert("Ce tableau est consécutif");
+        } else {
+            alert("Ce tableau n'est pas consécutif");
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

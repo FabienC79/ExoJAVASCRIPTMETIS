@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let nombreDeValeurs = parseInt(prompt("Entrez le nombre de valeurs que vous souhaitez saisir :"));
+
+        let valeurs = [];
+        let valeursPlusUn = [];
+
+        for (let i = 0; i < nombreDeValeurs; i++) {
+            let valeur = parseFloat(prompt(`Entrez la valeur numéro ${i + 1}:`));
+            valeurs.push(valeur);
+        }
+
+        console.log(valeurs);
+
+        for (let i = 0; i < valeurs.length; i++){
+            valeursPlusUn.push(valeurs[i] + 1);
+        }
+
+        console.log(valeursPlusUn);
+
+
+    </script>
+
+</body>
+</html>

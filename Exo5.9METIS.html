@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function lirePrix(){
+            let total = null;
+            let prix = null;
+            do{
+                prix = parseInt(window.prompt("Entrez le prix de l'achat (0 pour terminer)"))
+                if (prix !== 0) {
+                    total += prix;
+                }
+            } while (prix !== 0)
+            return total;
+        }
+
+        let totalAPayer = lirePrix();
+        console.log("Total à payer : " + totalAPayer + " Euros");
+        let sommePayee = null;
+
+        do {
+            sommePayee = parseInt(window.prompt("Entrez la somme donner par le client :"));
+            if (sommePayee < totalAPayer) {
+                alert("La somme n'est pas assée élevée pour payer ces articles");
+            }
+        } while (sommePayee < totalAPayer)
+
+        console.log("Somme donnée par le client :" + sommePayee + " Euros");
+
+        function argentRendu(sommePayee, totalAPayer){
+            let difference = sommePayee - totalAPayer;
+            console.log("Monnaie à rendre : " + difference + " Euros");
+
+            let billet10 = Math.floor(difference / 10);
+            difference %= 10;
+            for (let i = 0; i < billet10; i++){
+                console.log("10 Euros");
+            }
+
+            let billet5 = Math.floor(difference / 5);
+            difference %= 5;
+            for (let i = 0; i < billet5; i++){
+                console.log("5 Euros");
+            }
+
+            for (let i = 0; i < difference; i++){
+                console.log("1 Euro");
+            }
+        }
+
+        if (sommePayee >= totalAPayer){
+            argentRendu(sommePayee, totalAPayer);
+        } else {
+            console.log("la somme payée est insuffisante.");
+        }
+
+
+
+    </script>
+
+</body>
+</html>

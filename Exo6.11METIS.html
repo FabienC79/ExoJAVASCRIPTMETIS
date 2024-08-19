@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<script>
+    function saisirTableau(longueur, numeroTableau) {
+        let tableau = [];
+        for (let i = 0; i < longueur; i++) {
+            let valeur = parseFloat(prompt(`Entrez la valeur ${i + 1} pour le tableau ${numeroTableau}:`));
+            tableau.push(valeur);
+        }
+        return tableau;
+    }
+
+    let longueur = parseInt(prompt("Entrez la longueur des tableaux :"));
+
+    let tableau1 = saisirTableau(longueur, 1);
+    let tableau2 = saisirTableau(longueur, 2);
+
+    let schtroumpf = 0;
+    for (let i = 0; i < longueur; i++) {
+        for (let j = 0; j < longueur; j++) {
+            schtroumpf += tableau1[i] * tableau2[j];
+        }
+    }
+
+    console.log("Tableau 1 :", tableau1);
+    console.log("Tableau 2 :", tableau2);
+    console.log("Le schtroumpf des deux tableaux est :", schtroumpf);
+
+</script>
+
+</body>
+
+</html>
