@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        Soit un tableau T à deux dimensions (13, 9) préalablement rempli de valeurs numériques.
+        Écrire un algorithme qui recherche la plus grande valeur au sein de ce tableau
+         */
+        let tableauMulti = [];
+
+
+        for (let i = 0; i < 13; i++) {
+            tableauMulti[i] = []
+            for (let j = 0; j < 9; j++) {
+                tableauMulti[i][j] = Math.round(Math.random() * 100);
+            }
+        }
+
+        console.log(tableauMulti);
+
+        let valeurMax = 0;
+
+        for (let i = 0; i < tableauMulti.length; i++) {
+            for (let j = 0; j < tableauMulti[i].length; j++) {
+                if (valeurMax < tableauMulti[i][j]) {
+                    valeurMax = tableauMulti[i][j];
+                    // console.log(tableauMulti[i][j]);
+                }
+                // tableauMulti[i][j] = 0;
+            }
+        }
+
+        console.log(tableauMulti);
+        console.log(valeurMax);
+
+
+
+
+
+
+        // let nom = "rodolph"
+        // for (const lettre of nom) {
+        //     console.log(lettre)
+        // }
+        // for (let i = 0; i < nom.length; i++) {
+        //     console.log(nom[i])
+        //
+        // }
+        // for (const index in nom) {
+        //     console.log(nom[index])
+        // }
+
+
+
+
+    </script>
+
+
+</body>
+</html>
