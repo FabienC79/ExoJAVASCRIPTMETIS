@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    let tableauMulti = [];
+    let tableauSimple = [];
+
+    // for (let i = 0; i < 6; i++) {
+    //     for (let j = 0; j < 13; j++) {
+    //         tableauSimple.push(0);
+    //     }
+    //     // tableauMulti.push(tableauSimple);
+    // }
+
+    for (let j = 0; j < 13; j++) {
+        tableauSimple.push(0);
+    }
+    for (let i = 0; i < 6; i++) {
+        tableauMulti.push(tableauSimple);
+    }
+
+    console.log("le tableau simple : " + tableauSimple);
+    console.log(tableauMulti);
+
+
+</script>
+
+</body>
+</html>
