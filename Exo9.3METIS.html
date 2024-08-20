@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Ecrivez un algorithme qui demande une phrase à l'utilisateur et qui affiche à l'écran le nombre de mots de cette phrase.
+        On suppose que les mots ne sont séparés que par des espaces (et c'est déja un petit peu moins bête).
+         */
+
+        let maPhrase = window.prompt("Entrez la phrase voulu pour savoir combien de mots elle contient : ");
+        let maPhraseEnTableau = maPhrase.split(" ");
+
+        alert("Votre phrase fait " + maPhraseEnTableau.length + " mots.");
+
+        console.log(maPhrase);
+        console.log(maPhraseEnTableau.length);
+        console.log(maPhraseEnTableau);
+
+
+    </script>
+</body>
+</html>

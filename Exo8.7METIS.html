@@ -10,11 +10,69 @@
 <body>
 
     <script>
-        let jeuDeDame = [["O", "I", "O", "I", "O", "I", "O", "I", "O", "I"], ["I", "O", "I", "O", "I", "O", "I", "O", "I", "O"], ["O", "I", "O", "I", "O", "I", "O", "I", "O", "I"], ["I", "O", "I", "O", "I", "O", "I", "O", "I", "O"], ["O", "I", "O", "I", "O", "I", "O", "I", "O", "I"], ["I", "O", "I", "O", "I", "O", "I", "O", "I", "O"], ["O", "I", "O", "I", "O", "I", "O", "I", "O", "I"], ["I", "O", "I", "O", "I", "O", "I", "O", "I", "O"], ["O", "I", "O", "I", "O", "I", "O", "I", "O", "I"], ["I", "O", "I", "O", "I", "O", "I", "O", "I", "O"]];
-
-        console.log(jeuDeDame);
 
 
+        // let jeuDeDame = [["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"]];
+        let jeuDeDame = [];
+
+        for (let i = 0; i < 10; i++) {
+            jeuDeDame[i] = []
+            for (let j = 0; j < 10; j++) {
+                jeuDeDame[i][j] = "O";
+            }
+        }
+
+        console.table(jeuDeDame);
+
+        let posPionJoueurX = -1;
+        let posPionJoueurY = -1;
+        console.log(posPionJoueurX);
+        console.log(posPionJoueurY);
+
+        while (((posPionJoueurX > 9) || (posPionJoueurX < 0)) && ((posPionJoueurY > 9) || (posPionJoueurY < 0))) {
+            posPionJoueurX = parseInt(Math.round(window.prompt("Entrez les coordonnées de X compris entre 0 et 9")));
+            posPionJoueurY = parseInt(Math.round(window.prompt("Entrez les coordonnées de Y compris entre 0 et 9")));
+        }
+
+        console.log(posPionJoueurX);
+        console.log(posPionJoueurY);
+
+        jeuDeDame[posPionJoueurX][posPionJoueurY] = "X";
+        console.table(jeuDeDame);
+
+        let oldPosX = posPionJoueurX;
+        let oldPosY = posPionJoueurY;
+
+        let direction = parseInt(window.prompt("Entrez la direction  0 (en haut à gauche), 1 (en haut à droite), 2 (en bas à gauche), 3 (en bas à droite)"));
+        switch (direction) {
+            case 0:
+                posPionJoueurX--;
+                posPionJoueurY--;
+                break;
+            case 1:
+                posPionJoueurX++;
+                posPionJoueurY--;
+                break;
+            case 2:
+                posPionJoueurX++;
+                posPionJoueurY--;
+                break;
+            case 3:
+                posPionJoueurX++;
+                posPionJoueurY++;
+                break;
+            default:
+                console.error("Vous n'avez pas entré une bonne valeur");
+        }
+
+        if (posPionJoueurX > 9 || posPionJoueurX < 0 || posPionJoueurY > 9 || posPionJoueurY < 0) {
+            alert("Votre pion est en dehors du damier");
+        } else {
+            jeuDeDame[posPionJoueurX][posPionJoueurY] = "X";
+            jeuDeDame[oldPosX][oldPosY] = "O";
+        }
+
+        console.table(jeuDeDame);
 
     </script>
 

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Ecrivez un algorithme qui demande une phrase à l’utilisateur et qui affiche à l’écran le nombre de
+        voyelles contenues dans cette phrase.
+        On pourra écrire deux solutions. La première déploie une condition composée bien fastidieuse. La
+        deuxième, en utilisant la fonction Trouvé(), allège considérablement l'algorithme.
+         */
+
+        let maPhrase = window.prompt("Entrez votre phrase pour savoir combien de voyelles est contenue dedans : ");
+        console.log(maPhrase);
+        let voyelles = "aeiouyAEIOUY";
+        let nbVoyelles = 0;
+
+        for (let i = 0; i < maPhrase.length; i++) {
+            if (voyelles.includes(maPhrase[i])) {
+                nbVoyelles++;
+                console.log(maPhrase[i]);
+            }
+        }
+
+        console.log("Il y a " + nbVoyelles + " voyelles dans votre phrase.");
+
+
+
+
+    </script>
+</body>
+</html>

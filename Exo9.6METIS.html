@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        charCode de a-z = 97 - 122
+        charCode de A-Z = 65 - 90
+         */
+
+
+        let maPhrase = window.prompt("Veuillez entrer la phrase à crypté");
+        let maPhraseCryp = [];
+        let crypt = "";
+
+        for (let i = 0; i < maPhrase.length; i++) {
+            console.log(maPhrase.charCodeAt(i));
+            maPhraseCryp[i] = maPhrase.charCodeAt(i) + 1;
+            // console.log(maPhrase[i]);
+        }
+        console.log(maPhrase);
+        console.log(maPhraseCryp);
+        console.log(maPhraseCryp.length);
+
+        for (let i = 0; i < maPhraseCryp.length; i++) {
+            maPhraseCryp[i] = maPhraseCryp.charAt(i);
+        }
+        console.log(maPhraseCryp);
+        console.log(crypt);
+
+
+    </script>
+</body>
+</html>
